@@ -12,6 +12,7 @@ class DefinitionViewController: UIViewController {
 
    var emoji  = "No emoji"
     
+    @IBOutlet weak var definitionLabel: UILabel!
     @IBOutlet weak var emojiLabel: UILabel!
     
     
@@ -20,6 +21,21 @@ class DefinitionViewController: UIViewController {
         
         emojiLabel.text = emoji
         
+        if emoji == "🍆"{
+            definitionLabel.text = "Ayy"
+        }
+        
+        else if emoji == "👺"{
+            definitionLabel.text = "Devil Gang"
+        }
+        
+        else if emoji == "👿"{
+            definitionLabel.text = "Angry bois"
+        }
+        
+        if emoji == "🤖"{
+            definitionLabel.text = "Beep Boop Bop"
+        }
         
     }
 
