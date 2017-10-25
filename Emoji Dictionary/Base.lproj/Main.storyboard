@@ -56,27 +56,45 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sis-po-roG">
-                                <rect key="frame" x="140" y="393" width="94.5" height="20.5"/>
+                                <rect key="frame" x="171" y="393" width="33" height="20.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Muy Picante" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdu-VI-aC8">
-                                        <rect key="frame" x="0.0" y="0.0" width="94.5" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chili" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdu-VI-aC8">
+                                        <rect key="frame" x="0.0" y="0.0" width="33" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category: Food" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bck-E9-wBp">
+                                <rect key="frame" x="128.5" y="433" width="118.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created: 2012" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLk-Fq-f4o">
+                                <rect key="frame" x="133.5" y="473" width="108" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="sLk-Fq-f4o" firstAttribute="centerX" secondItem="byC-a8-Woi" secondAttribute="centerX" id="ALR-mn-gVo"/>
                             <constraint firstItem="sis-po-roG" firstAttribute="centerX" secondItem="byC-a8-Woi" secondAttribute="centerX" id="HwD-tV-9Z8"/>
+                            <constraint firstItem="bck-E9-wBp" firstAttribute="centerX" secondItem="byC-a8-Woi" secondAttribute="centerX" id="O0e-5O-qdZ"/>
+                            <constraint firstItem="sLk-Fq-f4o" firstAttribute="top" secondItem="bck-E9-wBp" secondAttribute="bottom" constant="20" id="WGE-ZM-UQj"/>
                             <constraint firstItem="BgQ-lt-b0h" firstAttribute="centerX" secondItem="byC-a8-Woi" secondAttribute="centerX" id="dEJ-MM-S7H"/>
                             <constraint firstItem="BgQ-lt-b0h" firstAttribute="top" secondItem="lgN-jr-l6P" secondAttribute="top" constant="40" id="kgq-Ty-Cbr"/>
+                            <constraint firstItem="bck-E9-wBp" firstAttribute="top" secondItem="vdu-VI-aC8" secondAttribute="bottom" constant="20" id="xsI-1V-ZGA"/>
                             <constraint firstItem="sis-po-roG" firstAttribute="top" secondItem="BgQ-lt-b0h" secondAttribute="bottom" constant="50" id="yDF-OA-nd4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lgN-jr-l6P"/>
                     </view>
                     <connections>
+                        <outlet property="birthYearLabel" destination="sLk-Fq-f4o" id="Vra-ac-gEi"/>
+                        <outlet property="categoryLabel" destination="bck-E9-wBp" id="Ttj-nY-rZR"/>
                         <outlet property="definitionLabel" destination="vdu-VI-aC8" id="XTB-be-GOk"/>
                         <outlet property="emojiLabel" destination="BgQ-lt-b0h" id="5dg-4Y-1VZ"/>
                     </connections>

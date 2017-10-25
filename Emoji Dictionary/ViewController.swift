@@ -13,7 +13,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     @IBOutlet weak var thetableView: UITableView!
     
     
-    var emojis = ["👺","👿","🤖","🍆"]
+    var emojis : [Emoji] = []
     
     
     override func viewDidLoad() {
@@ -22,6 +22,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         // this is where it asks questions on how many things will need to go into the tableview
         thetableView.dataSource = self
         thetableView.delegate = self
+        emojis = makeEmojiArray()
         
     }
 
@@ -33,7 +34,9 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     //  What you want inside of your row
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = emojis[indexPath.row]
+        let emoji = emojis[indexPath.row]
+        
+        cell.textLabel?.text = emoji.stringEmoji
         return cell
     }
     
@@ -45,7 +48,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        let defVC = segue.destination as! DefinitionViewController
-        defVC.emoji = sender as! String
+        defVC.emoji = sender as! Emoji
     } //!
     
     
@@ -54,6 +57,35 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         // Dispose of any resources that can be recreated.
     }
 
+    func makeEmojiArray() -> [Emoji]{
+        let emoji1 = Emoji()
+        emoji1.stringEmoji = "👺"
+        emoji1.birthyear = 2010
+        emoji1.category = "Smiley"
+        emoji1.defintion = "Demon Face"
+        
+        let emoji2 = Emoji()
+        emoji2.stringEmoji = "👿"
+        emoji2.birthyear = 2012
+        emoji2.category = "Smiley"
+        emoji2.defintion = "Evil Face"
+        
+        let emoji3 = Emoji()
+        emoji3.stringEmoji = "🤖"
+        emoji3.birthyear = 2011
+        emoji3.category = "Smiley"
+        emoji3.defintion = "Robot"
+        
+        let emoji4 = Emoji()
+        emoji4.stringEmoji = "🍆"
+        emoji4.birthyear = 2011
+        emoji4.category = "Food"
+        emoji4.defintion = "Eggplant"
+        
+        return [emoji1,emoji2,emoji3,emoji4]
+
+
+    }
 
 }
 
